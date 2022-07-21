@@ -1,4 +1,4 @@
-# ![logo](https://community.trinitycore.org/public/style_images/1_trinitycore.png) TrinityCore (3.3.5)
+# ![logo](https://community.trinitycore.org/public/style_images/1_trinitycore.png) TrinityCore (3.3.5) - Eluna Lua Engine
 
 [![Average time to resolve an issue](https://isitmaintained.com/badge/resolution/TrinityCore/TrinityCore.svg)](https://isitmaintained.com/project/TrinityCore/TrinityCore "Average time to resolve an issue") [![Percentage of issues still open](https://isitmaintained.com/badge/open/TrinityCore/TrinityCore.svg)](https://isitmaintained.com/project/TrinityCore/TrinityCore "Percentage of issues still open")
 
@@ -33,31 +33,33 @@ website at [TrinityCore.org](https://www.trinitycore.org).
 Software requirements are available in the [wiki](https://www.trinitycore.info/display/tc/Requirements) for
 Windows, Linux and OS X.
 
+## Preparation
+Initialize Eluna Engine before build
+
+``git submodule init``
+
+``git submodule update``
 
 ## Install
 
 Detailed installation guides are available in the [wiki](https://www.trinitycore.info/display/tc/Installation+Guide) for
 Windows, Linux and OS X.
 
+### Additional settings for Ubuntu 18.04
+Setup environment variables as target user.
 
-## Reporting issues
+``export CC=/usr/bin/clang-7``
 
-Issues can be reported via the [Github issue tracker](https://github.com/TrinityCore/TrinityCore/labels/Branch-3.3.5a).
+``export CPP=/usr/bin/clang-cpp-7``
 
-Please take the time to review existing issues before submitting your own to
-prevent duplicates.
+``export CXX=/usr/bin/clang++-7``
 
-In addition, thoroughly read through the [issue tracker guide](https://community.trinitycore.org/topic/37-the-trinitycore-issuetracker-and-you/) to ensure
-your report contains the required information. Incorrect or poorly formed
-reports are wasteful and are subject to deletion.
+### Build settings
+``cmake ../ -DCMAKE_INSTALL_PREFIX=/home/$USER/server -DTOOLS=0 -DWITH_WARNINGS=1``
 
+### Setup ezLife Eluna scripts
 
-## Submitting fixes
-
-C++ fixes are submitted as pull requests via Github. For more information on how to
-properly submit a pull request, read the [how-to: maintain a remote fork](https://community.trinitycore.org/topic/9002-howto-maintain-a-remote-fork-for-pull-requests-tortoisegit/).
-For SQL only fixes open a ticket or if a bug report exists for the bug post on existing ticket.
-
+``git clone https://github.com/fjnalta/Eluna-Lua-Scripts.git``
 
 ## Copyright
 
@@ -69,7 +71,6 @@ Read file [COPYING](COPYING).
 ## Authors &amp; Contributors
 
 Read file [AUTHORS](AUTHORS).
-
 
 ## Links
 
