@@ -55,7 +55,13 @@ Setup environment variables as target user.
 ``export CXX=/usr/bin/clang++-7``
 
 ### Build settings
+``cd build``
+
 ``cmake ../ -DCMAKE_INSTALL_PREFIX=/home/$USER/server -DTOOLS=0 -DWITH_WARNINGS=1``
+
+``make``
+
+``make install``
 
 ### Setup ezLife Eluna scripts
 
